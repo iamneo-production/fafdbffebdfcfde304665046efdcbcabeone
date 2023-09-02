@@ -17,21 +17,16 @@ let conditions = [
 // Function to handle player moves
 const ticTacToe = (element, index) => {
     if (cells[index] === '' && isGameActive()) {
-        // Update the cell with the current player's symbol
         cells[index] = currentPlayer;
         element.textContent = currentPlayer;
 
-        // Check for a win or a draw
         if (checkWin(currentPlayer)) {
-            // Display the winning message
             result.textContent = `Player ${currentPlayer} Wins!`;
             disableButtons();
         } else if (isBoardFull()) {
-            // Display a draw message
             result.textContent = "It's a Draw!";
             disableButtons();
         } else {
-            // Switch to the other player's turn
             currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
             result.textContent = `Player ${currentPlayer}'s Turn`;
         }
@@ -42,8 +37,6 @@ const ticTacToe = (element, index) => {
 const isGameActive = () => {
     return result.textContent === '';
 };
-
-// Function to check for a win
 const checkWin = (player) => {
     for (let condition of conditions) {
         const [a, b, c] = condition;
@@ -54,12 +47,10 @@ const checkWin = (player) => {
     return false;
 };
 
-// Function to check if the board is full (draw)
 const isBoardFull = () => {
     return cells.every(cell => cell !== '');
 };
 
-// Function to disable all buttons
 const disableButtons = () => {
     btns.forEach(btn => btn.disabled = true);
 };
@@ -67,14 +58,8 @@ const disableButtons = () => {
 const resetGame = () => {
     cells = ['', '', '', '', '', '', '', '', ''];
     currentPlayer = 'X';
-
-    // Clear cell text content
     btns.forEach(btn => btn.textContent = '');
-
-    // Reset result message
     result.textContent = `Player ${currentPlayer}'s Turn`;
-
-    // Enable all buttons
     btns.forEach(btn => btn.disabled = false);
 
 };
