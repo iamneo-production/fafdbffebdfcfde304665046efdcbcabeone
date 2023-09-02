@@ -8,6 +8,7 @@ body {
     background-position: center center;
     font-family: "Radio Canada", sans-serif;
   }
+  
 #header {
     text-align: center;
     color: #fff;
@@ -28,7 +29,7 @@ body {
     justify-content: center;
 }
 
-.bt {
+.btn {
     width: 75px;
     height: 75px;
     border: 2px solid #fff;
@@ -41,11 +42,11 @@ body {
     cursor: pointer;
     margin: 5px;
 }
-.bt:hover {
+.btn:hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.bt:disabled {
+.btn:disabled {
   color: black;
   cursor: no-drop;
 }
@@ -77,7 +78,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-#reset-button:hover {
+#reset:hover {
   background-color: black;
   color:#fff;
 }
